@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Flights</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7 col-md-offset-2">
+<div class="panel panel-default">
+  <div class="panel-heading" style="background-color:#FFD700;">
+    <h2 class="panel-title">Flights List</h2>
+  </div>
+  <div class="panel-body">
+      <div class="row">
+    <div class="col-sm-6" style="background-color:#DCDCDC;">
+      <h3>Listing Departures</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Flight</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @flights.each do |flight| %>
+        <tr>
+        <td><%= flight.number %></td>
+        <td><%= flight.departure.date %></td>
+        <td><%= flight.departure.status %></td>
+ 
+        </tr>
+      <% end %>
+        </tbody>
+      </table>
+    </div>
+ 
+    <div class="col-sm-6" style="background-color:#E3EDFF;">
+      <h3>Listing Arrivals</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Flight</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @flights.each do |flight| %>
+        <tr>
+        <td><%= flight.number %></td>
+        <td><%= flight.arrival.date %></td>
+        <td><%= flight.arrival.status %></td>
+ 
+        </tr>
+      <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
